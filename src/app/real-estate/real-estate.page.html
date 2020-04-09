@@ -5,18 +5,16 @@
 </ion-header>
 
 <ion-content>
-    <ion-card>
-        <img src="{{model.poster}}"/>
-        <ion-card-content>
-            <ion-card-title>
-                {{model.title}}
-            </ion-card-title>
-            <p>
-                {{model.description}}
-            </p>
-        </ion-card-content>
-        <ion-card-content>
-            <ngx-gallery [options]="galleryOptions" [images]="images"></ngx-gallery>
-        </ion-card-content>
-    </ion-card>
+    <img src="{{model.poster}}"/>
+    <ion-card-content>
+        <ion-card-title>
+            {{model.title}}
+        </ion-card-title>
+        <p>
+            {{model.description}}
+        </p>
+    </ion-card-content>
+    <ion-card-content>
+        <ngx-gallery [options]="galleryOptions" [images]="images"></ngx-gallery>
+    </ion-card-content>
 </ion-content>
