@@ -7,7 +7,7 @@
 <ion-content>
 
     <ion-row>
-        <ion-col *ngFor="let model of RealEstates" [routerLink]="['/real-estate/', model.id]" size-md="4">
+        <ion-col *ngFor="let model of RealEstates" [routerLink]="['/real-estate/', model.id]" size="12" size-md="4">
             <ion-card>
                 <img src="{{model.poster}}"/>
                 <ion-card-content>
@@ -15,14 +15,20 @@
                         {{model.title}}
                     </ion-card-title>
                     <p>
-                        {{model.description | slice:0:200}}
+                        {{model.shortDescription }}
                     </p>
                 </ion-card-content>
                 <ion-card-content>
                     <ion-row style="text-align: center; font-size: 1.5em">
-                        <ion-col text-center><ion-icon name="bed"></ion-icon> {{model.bedroomsCount}}</ion-col>
-                        <ion-col text-center><ion-icon name="car"></ion-icon> {{model.bathroomsCount}}</ion-col>
-                        <ion-col text-center *ngIf="model.garageCount != 0"><ion-icon name="car"></ion-icon> {{model.garageCount}}</ion-col>
+                        <ion-col>
+                            <ion-icon name="bed"></ion-icon>
+                            {{model.bedroomsCount}}</ion-col>
+                        <ion-col>
+                            <ion-icon name="car"></ion-icon>
+                            {{model.bathroomsCount}}</ion-col>
+                        <ion-col *ngIf="model.garageCount != 0">
+                            <ion-icon name="car"></ion-icon>
+                            {{model.garageCount}}</ion-col>
                     </ion-row>
                 </ion-card-content>
             </ion-card>

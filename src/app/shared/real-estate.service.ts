@@ -26,7 +26,7 @@ export class RealEstateService {
     }
 
     getRealEstateList(): Observable<RealEstate[]> {
-        return this.http.get<RealEstate[]>('http://api.hogarencuba.test/v1/real-estates')
+        return this.http.get<RealEstate[]>('http://api.hogarencuba.test/v1/real-estates?fields=id,title,shortDescription,bedroomsCount,bathroomsCount,garageCount,poster,location')
             .pipe(
                 tap(songs => console.log('Real Estates fetched!')),
                 catchError(this.handleError<RealEstate[]>('Get Real Estates', []))

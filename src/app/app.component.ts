@@ -17,8 +17,34 @@ export class AppComponent implements OnInit {
             url: '/real-estate',
             icon: 'home'
         },
+        {
+            title: 'Vender',
+            url: '/real-estate',
+            icon: 'wallet'
+        },
+        {
+            title: 'Contacto',
+            url: '/real-estate',
+            icon: 'mail-open'
+        },
     ];
-    public labels = [];
+    public labels = [
+        'Pinar del Río',
+        'Artemisa',
+        'La Habana',
+        'Mayabeque',
+        'Matanzas',
+        'Cienfuegos',
+        'Villa Clara',
+        'Sancti Spiritus',
+        'Ciego de Ávila',
+        'Camagüey',
+        'Las Tunas',
+        'Granma',
+        'Holguín',
+        'Santiago de Cuba',
+        'Guantánamo',
+    ];
 
     constructor(
         private platform: Platform,
