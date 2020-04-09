@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Real Estates</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list class="ios list-ios hydrated">
+        <ion-list-header class="ios hydrated">
+            Propiedades en venta
+        </ion-list-header>
+        <ion-item *ngFor="let model of RealEstates" [routerLink]="['/real-estate/', model.id]">
+            <ion-thumbnail slot="start">
+                <img src="{{model.poster}}">
+            </ion-thumbnail>
+            <ion-label class="sc-ion-label-ios-h sc-ion-label-ios-s ios hydrated">
+                <h2>{{model.title}}</h2>
+                <h3>{{model.description}}</h3>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>
