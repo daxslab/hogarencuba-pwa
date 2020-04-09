@@ -13,8 +13,26 @@
         <p>
             {{model.description}}
         </p>
-    </ion-card-content>
-    <ion-card-content>
+
+        <ion-card>
+            <ion-card-content>
+                <ion-grid style="text-align: center; font-size: 2em">
+                    <ion-row>
+                        <ion-col>
+                            <a href="tel:+5352381595">+53 52382595</a>
+                        </ion-col>
+                        <ion-col>
+                            <ion-row>
+                                <ion-col><a href="https://m.me/hogarencuba">Me</a></ion-col>
+                                <ion-col><a href="https://t.me/hogarencuba">Te</a></ion-col>
+                                <ion-col><a href="https://wa.me/5352181595">Wa</a></ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-content>
+        </ion-card>
+
         <ngx-gallery [options]="galleryOptions" [images]="images"></ngx-gallery>
     </ion-card-content>
 </ion-content>
