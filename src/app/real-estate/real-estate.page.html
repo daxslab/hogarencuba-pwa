@@ -5,6 +5,22 @@
 </ion-header>
 
 <ion-content>
-    <h1>{{model.title}}</h1>
-    <p>{{model.description}}</p>
+    <ion-card>
+        <img src="{{model.poster}}"/>
+        <ion-card-content>
+            <ion-card-title>
+                {{model.title}}
+            </ion-card-title>
+            <p>
+                {{model.description}}
+            </p>
+        </ion-card-content>
+        <ion-card-content>
+            <ion-row>
+                <ion-col *ngFor="let image of model.images" size="12" size-md="4">
+                    <img src="{{image.url}}" alt="">
+                </ion-col>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

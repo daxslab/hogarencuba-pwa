@@ -18,7 +18,7 @@ export class RealEstateService {
     }
 
     getRealEstate(id): Observable<RealEstate> {
-        return this.http.get<RealEstate>('http://api.hogarencuba.test/v1/real-estates/' + id)
+        return this.http.get<RealEstate>('http://api.hogarencuba.test/v1/real-estates/' + id + '?expand=images')
             .pipe(
                 tap(_ => console.log(`RealEstate fetched: ${id}`)),
                 catchError(this.handleError<RealEstate>(`Get RealEstate id=${id}`))

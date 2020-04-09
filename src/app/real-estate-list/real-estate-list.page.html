@@ -5,18 +5,27 @@
 </ion-header>
 
 <ion-content>
-    <ion-list class="ios list-ios hydrated">
-        <ion-list-header class="ios hydrated">
-            Propiedades en venta
-        </ion-list-header>
-        <ion-item *ngFor="let model of RealEstates" [routerLink]="['/real-estate/', model.id]">
-            <ion-thumbnail slot="start">
-                <img src="{{model.poster}}">
-            </ion-thumbnail>
-            <ion-label class="sc-ion-label-ios-h sc-ion-label-ios-s ios hydrated">
-                <h2>{{model.title}}</h2>
-                <h3>{{model.description}}</h3>
-            </ion-label>
-        </ion-item>
-    </ion-list>
+
+    <ion-row>
+        <ion-col *ngFor="let model of RealEstates" [routerLink]="['/real-estate/', model.id]" size-md="4">
+            <ion-card>
+                <img src="{{model.poster}}"/>
+                <ion-card-content>
+                    <ion-card-title>
+                        {{model.title}}
+                    </ion-card-title>
+                    <p>
+                        {{model.description | slice:0:200}}
+                    </p>
+                </ion-card-content>
+                <ion-card-content>
+                    <ion-row style="text-align: center; font-size: 1.5em">
+                        <ion-col text-center><ion-icon name="bed"></ion-icon> {{model.bedroomsCount}}</ion-col>
+                        <ion-col text-center><ion-icon name="car"></ion-icon> {{model.bathroomsCount}}</ion-col>
+                        <ion-col text-center *ngIf="model.garageCount != 0"><ion-icon name="car"></ion-icon> {{model.garageCount}}</ion-col>
+                    </ion-row>
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+    </ion-row>
 </ion-content>
