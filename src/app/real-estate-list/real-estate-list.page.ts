@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {RealEstate} from "./../shared/real-estate";
 import {RealEstateService} from "./../shared/real-estate.service";
 
 @Component({
@@ -9,7 +10,7 @@ import {RealEstateService} from "./../shared/real-estate.service";
 })
 export class RealEstateListPage implements OnInit {
 
-    RealEstates: any[];
+    RealEstates: RealEstate[] = [];
 
     constructor(private activatedRoute: ActivatedRoute, private realEstateService: RealEstateService) {
     }
@@ -20,7 +21,7 @@ export class RealEstateListPage implements OnInit {
     ionViewDidEnter() {
         this.realEstateService.getRealEstateList().subscribe((res) => {
             console.log(res)
-            this.RealEstates = res;
+            this.RealEstates = this.RealEstates.concat(res);
         })
     }
 
