@@ -4,8 +4,7 @@
             <ion-content>
                 <ion-list id="inbox-list">
                     <ion-list-header>HogarEnCuba</ion-list-header>
-                    <ion-note>contact@hogarencuba.com</ion-note>
-
+                    <ion-note><a href="mailto:contact@hogarencuba.com">contact@hogarencuba.com</a></ion-note>
                     <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
                         <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none"
                                   detail="false" [class.selected]="selectedIndex == i">
@@ -14,12 +13,12 @@
                         </ion-item>
                     </ion-menu-toggle>
                 </ion-list>
-
                 <ion-list id="labels-list">
-                    <ion-list-header>Labels</ion-list-header>
-                    <ion-item *ngFor="let label of labels" lines="none">
-                        <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
-                        <ion-label>{{ label }}</ion-label>
+                    <ion-list-header>Provincias</ion-list-header>
+                    <ion-item *ngFor="let province of provinces" [routerLink]="['/real-estate', province.name]" lines="none">
+                        <ion-icon slot="start" name="play"></ion-icon>
+                        <ion-label>{{ province.name }}</ion-label>
+                        <ion-badge>{{province.real_estates }}</ion-badge>
                     </ion-item>
                 </ion-list>
             </ion-content>

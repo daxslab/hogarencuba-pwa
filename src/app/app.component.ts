@@ -3,6 +3,8 @@ import {Component, OnInit} from '@angular/core';
 import {Platform} from '@ionic/angular';
 import {SplashScreen} from '@ionic-native/splash-screen/ngx';
 import {StatusBar} from '@ionic-native/status-bar/ngx';
+import {Location} from "./shared/location";
+import {LocationService} from "./shared/location.service";
 
 @Component({
     selector: 'app-root',
@@ -28,28 +30,14 @@ export class AppComponent implements OnInit {
             icon: 'mail-open'
         },
     ];
-    public labels = [
-        'Pinar del Río',
-        'Artemisa',
-        'La Habana',
-        'Mayabeque',
-        'Matanzas',
-        'Cienfuegos',
-        'Villa Clara',
-        'Sancti Spiritus',
-        'Ciego de Ávila',
-        'Camagüey',
-        'Las Tunas',
-        'Granma',
-        'Holguín',
-        'Santiago de Cuba',
-        'Guantánamo',
-    ];
+
+    public provinces: Location[] = [];
 
     constructor(
         private platform: Platform,
         private splashScreen: SplashScreen,
-        private statusBar: StatusBar
+        private statusBar: StatusBar,
+        private locationService: LocationService
     ) {
         this.initializeApp();
     }
@@ -66,5 +54,9 @@ export class AppComponent implements OnInit {
         if (path !== undefined) {
             this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
         }
+        this.locationService.getLocationList().subscribe((res) => {
+            console.log(res)
+            this.provinces = res;
+        })
     }
 }
