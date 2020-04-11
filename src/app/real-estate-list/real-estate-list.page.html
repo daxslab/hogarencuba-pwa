@@ -7,7 +7,7 @@
 <ion-content>
     <ion-row>
         <ion-col *ngFor="let model of RealEstates" [routerLink]="['/real-estate/', model.id]" size="12" size-md="4">
-            <ion-card>
+            <ion-card style="height: 100%">
                 <img src="{{model.poster}}"/>
                 <ion-card-content>
                     <ion-card-title>
