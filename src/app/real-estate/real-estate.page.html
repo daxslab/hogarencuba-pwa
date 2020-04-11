@@ -14,24 +14,32 @@
             {{model.description}}
         </p>
 
-        <ion-card>
-            <ion-card-content>
-                <ion-grid style="text-align: center; font-size: 2em">
+        <ion-grid style="text-align: center; font-size: 2em">
+            <ion-row>
+                <ion-col>
+                    <ion-button expand="block" size="large" href="tel:+5352381595">+53 52382595</ion-button>
+                </ion-col>
+                <ion-col>
                     <ion-row>
                         <ion-col>
-                            <a href="tel:+5352381595">+53 52382595</a>
+                            <ion-button expand="block" size="large" href="https://m.me/hogarencuba">
+                                <ion-icon name="play"></ion-icon>
+                            </ion-button>
                         </ion-col>
                         <ion-col>
-                            <ion-row>
-                                <ion-col><a href="https://m.me/hogarencuba">Me</a></ion-col>
-                                <ion-col><a href="https://t.me/hogarencuba">Te</a></ion-col>
-                                <ion-col><a href="https://wa.me/5352181595">Wa</a></ion-col>
-                            </ion-row>
+                            <ion-button expand="block" size="large" href="https://t.me/hogarencuba">
+                                <ion-icon name="play"></ion-icon>
+                            </ion-button>
+                        </ion-col>
+                        <ion-col>
+                            <ion-button expand="block" size="large" href="https://wa.me/5352181595">
+                                <ion-icon name="play"></ion-icon>
+                            </ion-button>
                         </ion-col>
                     </ion-row>
-                </ion-grid>
-            </ion-card-content>
-        </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
 
         <ngx-gallery [options]="galleryOptions" [images]="images"></ngx-gallery>
     </ion-card-content>
