@@ -1,12 +1,12 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>HEC{{model.id}}</ion-title>
+        <ion-title *ngIf="model!=null">HEC{{model.id}}</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <img src="{{model.poster}}"/>
-    <ion-card-content>
+    <img *ngIf="model!=null" src="{{model.poster}}"/>
+    <ion-card-content *ngIf="model!=null">
         <ion-card-title>
             {{model.title}}
         </ion-card-title>
